@@ -107,6 +107,7 @@
         "tsx": "never"
       }
     ],
+    "import/no-extraneous-dependencies": "off",
     //無障礙
     "jsx-a11y/click-events-have-key-events": "off",
     "jsx-a11y/no-static-element-interactions": "off",
