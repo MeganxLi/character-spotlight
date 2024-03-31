@@ -103,8 +103,8 @@
       {
         "js": "never",
         "jsx": "never",
-        "ts": "always",
-        "tsx": "always"
+        "ts": "never",
+        "tsx": "never"
       }
     ],
     //無障礙
