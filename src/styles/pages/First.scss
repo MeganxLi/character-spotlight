@@ -18,12 +18,15 @@
     margin: 2px;
     padding: 2.5rem 1rem;
     transition: 0.5s;
+    display: grid;
+    align-items: center;
 
     img {
       width: 100%;
       object-fit: cover;
       transform: translateY(20px);
       transition: transform 0.3s ease;
+      opacity: 0;
     }
 
     &:hover {
@@ -33,7 +36,10 @@
 
       img {
         transform: translateY(0);
+        opacity: 1;
       }
+
+      color: #000;
     }
 
     .role-content-name {
@@ -61,5 +67,6 @@
     border: 2px solid #fff;
     border-radius: 50px;
     transition: 0.3s;
+    margin-top: 2rem;
   }
 }
