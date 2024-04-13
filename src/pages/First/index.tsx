@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react'
 
 import Arrow from '../../components/Arrow'
+import { PUBLIC_URL } from '../../constants/EnumType'
 import RoleList from '../../constants/List'
 
 const First = () => {
@@ -29,7 +30,7 @@ const First = () => {
             <h3 className="role-content-name">{item.name}</h3>
             <h4 className="role-content-role">{item.role}</h4>
           </div>
-          <img src={`/images/${item.name}.png`} alt={item.name} />
+          <img src={`${PUBLIC_URL}/images/${item.name}.png`} alt={item.name} />
           <Arrow />
         </div>
       ))}
