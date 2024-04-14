@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 import { rwd } from '../util/Mixins'
+import colors from '../util/Variables'
 
 export const FirstPage = styled.main`
  height: 100vh;
@@ -18,7 +19,7 @@ export const FirstPage = styled.main`
 `
 
 export const RoleContent = styled.div<RoleContentType>`
-  background: ${(props) => props.backgroundColor};
+  background: ${colors.black};
   color: #fff;
   margin: 2px;
   padding: 2.5rem 1rem;
@@ -35,8 +36,11 @@ export const RoleContent = styled.div<RoleContentType>`
   }
 
   &:hover {
+    background: ${(props) => (props.backgroundColor)};
     #ArrowIcon {
       transform: rotate(-60deg);
+      color: ${colors.black};
+      border-color: ${colors.black};
     }
 
     img {
@@ -44,7 +48,7 @@ export const RoleContent = styled.div<RoleContentType>`
       opacity: 1;
     }
 
-    color: #000;
+    color: ${colors.black};
   }
 `
 
