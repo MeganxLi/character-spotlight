@@ -1,4 +1,4 @@
-type media = {
-  mobile: string,
-  tablet: string,
+/* -- First --*/
+type RoleContentType = {
+  backgroundColor: string
 }
