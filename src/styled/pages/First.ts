@@ -4,7 +4,7 @@ import { rwd } from '../util/Mixins'
 import colors from '../util/Variables'
 
 export const FirstPage = styled.main`
- height: 100vh;
+  height: 100vh;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   transition: 2s;
@@ -36,7 +36,7 @@ export const RoleContent = styled.div<RoleContentType>`
   }
 
   &:hover {
-    background: ${(props) => (props.backgroundColor)};
+    background: ${(props) => (props.$backgroundcolor)};
     #ArrowIcon {
       transform: rotate(-60deg);
       color: ${colors.black};

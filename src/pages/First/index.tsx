@@ -10,7 +10,7 @@ const First = () => (
     {RoleList.map((item) => (
       <RoleContent
         key={item.name}
-        backgroundColor={item.color}
+        $backgroundcolor={item.color}
       >
         <RoleContentTitle>
           <RoleContentName>{item.name}</RoleContentName>

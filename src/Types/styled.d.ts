@@ -1,4 +1,4 @@
 /* -- First --*/
 type RoleContentType = {
-  backgroundColor: string
+  $backgroundcolor: string
 }
