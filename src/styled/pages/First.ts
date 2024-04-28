@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 
+import CircleStyled from '../components/Circle'
 import { rwd } from '../util/Mixins'
 import colors from '../util/Variables'
 
@@ -20,7 +21,7 @@ export const FirstPage = styled.main`
 
 export const RoleContent = styled.div<RoleContentType>`
   background: ${colors.black};
-  color: #fff;
+  color: ${colors.white};
   margin: 2px;
   padding: 2.5rem 1rem;
   transition: 0.5s;
@@ -67,15 +68,10 @@ export const RoleContentRole = styled.h4`
 `
 
 const IconsSize = '2.5rem'
-export const ArrowIcon = styled.div`
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  color: #fff;
+export const ArrowIcon = styled(CircleStyled)`
   width: ${IconsSize};
   height: ${IconsSize};
-  border: 2px solid #fff;
-  border-radius: 50px;
+  border: 2px solid ${colors.white};
   transition: 0.3s;
   margin-top: 2rem;
 `
