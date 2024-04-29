@@ -10,12 +10,12 @@ const RoleList: RoleListType[] = [
     color: '#f2c917',
   },
   {
-    name: 'Raze',
-    role: 'DUELIST',
+    name: 'Viper',
+    role: 'CONTROLLER',
     color: '#8ab651',
   },
   {
-    name: 'Reyna',
+    name: 'Yoru',
     role: 'DUELIST',
     color: '#9b3dc9',
   },
