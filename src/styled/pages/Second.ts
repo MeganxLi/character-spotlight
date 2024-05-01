@@ -25,12 +25,13 @@ export const SecondPage = styled.main`
   transition: 2s;
 `
 
-export const SecondRoleContent = styled.div<RoleContentType>`
+export const SecondRoleContent = styled.div<SecondRoleContentType>`
   background-color: ${(props) => (props.$backgroundcolor)};
   background-image: url(${({ $img }) => $img});
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center 5rem;
+  display: ${({ $clickRole, $key }) => ($clickRole !== null && $clickRole <= $key - 1 ? 'none' : 'block')};
   img {
     width: 100%;
     object-fit: cover;

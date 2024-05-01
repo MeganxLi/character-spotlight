@@ -26,6 +26,8 @@ const Second = () => {
           onClick={() => clickItem(key)}
           $backgroundcolor={item.color}
           $img={`/${PUBLIC_URL}/images/${item.name}.png`}
+          $clickRole={clickRole}
+          $key={key}
         >
           {clickRole === key && (
             <Switch
