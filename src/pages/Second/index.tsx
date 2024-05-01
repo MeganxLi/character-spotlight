@@ -10,6 +10,10 @@ const Second = () => {
 
   const clickItem = (itemKey: number) => (clickRole !== itemKey && setClickRole(itemKey))
 
+  const clickSwitch = (calcCurrent: number) => {
+    if (calcCurrent < RoleList.length && calcCurrent >= 0) setClickRole(calcCurrent)
+  }
+
   useEffect(() => {
     console.log('clickRole--', clickRole)
   }, [clickRole])
@@ -27,7 +31,7 @@ const Second = () => {
             <Switch
               next={false}
               current={clickRole || 0}
-              onChange={(calcCurrent) => setClickRole(calcCurrent)}
+              onChange={clickSwitch}
             />
           )}
           {/* <img src={`/${PUBLIC_URL}/images/${item.name}.png`} alt={item.name} /> */}
@@ -35,7 +39,7 @@ const Second = () => {
             <Switch
               next
               current={clickRole || 0}
-              onChange={(calcCurrent) => setClickRole(calcCurrent)}
+              onChange={clickSwitch}
             />
           )}
         </SecondRoleContent>
