@@ -19,7 +19,7 @@ const Second = () => {
   }, [clickRole])
 
   return (
-    <SecondPage>
+    <SecondPage $current={clickRole}>
       {RoleList.map((item, key) => (
         <SecondRoleContent
           key={item.name}
