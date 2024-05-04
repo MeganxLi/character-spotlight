@@ -1,5 +1,6 @@
-import { ChevronRight } from 'react-feather'
+import { ChevronLeft, ChevronRight } from 'react-feather'
 
+import { ICON_SIZE } from '../constants/EnumType'
 import { SwitchStyled } from '../styled/pages/Second'
 
 interface SwitchProps {
@@ -14,7 +15,8 @@ const Switch = ({ next, current, onChange }: SwitchProps) => {
   }
   return (
     <SwitchStyled $nextDirection={next} onClick={clickSwitch}>
-      <ChevronRight size={28} />
+
+      {next ? <ChevronRight size={ICON_SIZE} /> : <ChevronLeft size={ICON_SIZE} />}
     </SwitchStyled>
   )
 }

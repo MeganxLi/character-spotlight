@@ -7,10 +7,12 @@ import colors from '../util/Variables'
 // Component
 const SwitchSize = '4rem'
 export const SwitchStyled = styled(CircleStyled) <SwitchType>`
-  transform: ${(prop) => ((prop.$nextDirection ? '' : 'rotate(180deg)'))};
   width: ${SwitchSize};
   height: ${SwitchSize};
   cursor: pointer;
+  position: absolute;
+  top: 60%;
+  ${({ $nextDirection }) => ($nextDirection ? 'right: 10%;' : 'left: 10%;')}
 
   &:hover, &:active{
     background-color: ${colors.white50};
@@ -53,9 +55,12 @@ export const SecondPage = styled.main<SecondPageType>`
 export const SecondRoleContent = styled.div<SecondRoleContentType>`
   background-color: ${(props) => (props.$backgroundcolor)};
   background-image: url(${({ $img }) => $img});
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-repeat: no-repeat; 
+  background-size: auto, cover;
   background-position: center 5rem;
+  height: 100%;
+  width: 100%;
+  position: relative;
   img {
     width: 100%;
     object-fit: cover;
