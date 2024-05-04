@@ -1,9 +1,9 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 
 import Switch from '../../components/Switch'
 import { PUBLIC_URL } from '../../constants/EnumType'
 import RoleList from '../../constants/List'
-import { SecondPage, SecondRoleContent } from '../../styled/pages/Second'
+import { SecondPage, SecondRoleContent, SecondRoleTitle } from '../../styled/pages/Second'
 
 const Second = () => {
   const [clickRole, setClickRole] = useState<number | null>(null)
@@ -13,10 +13,6 @@ const Second = () => {
   const clickSwitch = (calcCurrent: number) => {
     if (calcCurrent < RoleList.length && calcCurrent >= 0) setClickRole(calcCurrent)
   }
-
-  useEffect(() => {
-    console.log('clickRole--', clickRole)
-  }, [clickRole])
 
   return (
     <SecondPage $current={clickRole}>
@@ -30,11 +26,14 @@ const Second = () => {
           $key={key}
         >
           {clickRole === key && (
-            <Switch
-              next={false}
-              current={clickRole || 0}
-              onChange={clickSwitch}
-            />
+            <>
+              <SecondRoleTitle>{item.name}</SecondRoleTitle>
+              <Switch
+                next={false}
+                current={clickRole || 0}
+                onChange={clickSwitch}
+              />
+            </>
           )}
           {/* <img src={`/${PUBLIC_URL}/images/${item.name}.png`} alt={item.name} /> */}
           {clickRole === key && (
