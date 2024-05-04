@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import RoleList from '../../constants/List'
 import CircleStyled from '../components/Circle'
 import rotateAnimation from '../util/Animation'
+import { rwd } from '../util/Mixins'
 import colors from '../util/Variables'
 
 // Component
@@ -14,6 +15,7 @@ export const SwitchStyled = styled(CircleStyled) <SwitchType>`
   position: absolute;
   top: 60%;
   ${({ $nextDirection }) => ($nextDirection ? 'right: 10%;' : 'left: 10%;')}
+  z-index: 50;
 
   &:hover, &:active{
     background-color: ${colors.white50};
@@ -45,12 +47,34 @@ const generateGridTemplate = (current: number | null) => {
 
   return templateValues.join(' ')
 }
+
+const generateGridTemplateRWD = (current: number | null) => {
+  const templateValues = []
+
+  for (let i = 0; i < RoleList.length; i++) {
+    switch (true) {
+      case i === current:
+        templateValues.push('1fr')
+        break
+
+      default:
+        templateValues.push('0fr')
+        break
+    }
+  }
+
+  return templateValues.join(' ')
+}
 export const SecondPage = styled.main<SecondPageType>`
   background-color:${colors.black};
   height:100vh;
   display: grid;
   grid-template-columns: ${({ $current }) => generateGridTemplate($current)};
   transition: 0.8s;
+
+  ${rwd('tablet')} {
+    grid-template-columns: ${({ $current }) => generateGridTemplateRWD($current)};
+  }
 `
 
 export const SecondRoleContent = styled.div<SecondRoleContentType>`
