@@ -1,9 +1,11 @@
 import { ArrowRight } from 'react-feather'
 
+import { ArrowIcon } from '../styled/pages/First'
+
 const Arrow = () => (
-  <div id="ArrowIcon">
+  <ArrowIcon id="ArrowIcon">
     <ArrowRight className="icon" />
-  </div>
+  </ArrowIcon>
 )
 
 export default Arrow
