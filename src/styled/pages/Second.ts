@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 import RoleList from '../../constants/List'
 import CircleStyled from '../components/Circle'
+import rotateAnimation from '../util/Animation'
 import colors from '../util/Variables'
 
 // Component
@@ -66,4 +67,15 @@ export const SecondRoleContent = styled.div<SecondRoleContentType>`
     object-fit: cover;
     transition: transform 0.3s ease;
   }
+`
+export const SecondRoleTitle = styled.p`
+  color: ${colors.white};
+  font-size: 4rem; 
+  text-transform: Uppercase;
+  font-weight: 500;
+  animation-name: ${rotateAnimation};
+  animation-duration: 0.8s;
+  animation-fill-mode: both;
+  position: absolute;
+  top: 20%;
 `
