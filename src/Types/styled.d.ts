@@ -13,7 +13,10 @@ type SecondPageType = {
 }
 
 type SecondRoleContentType = RoleContentType & {
-  $img: string
   $clickRole: number | null
   $key: number
+}
+
+type SecondRoleImage = {
+  $img: string
 }
