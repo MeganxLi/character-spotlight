@@ -16,6 +16,11 @@ export const SwitchStyled = styled(CircleStyled) <SwitchType>`
   top: 60%;
   ${({ $nextDirection }) => ($nextDirection ? 'right: 10%;' : 'left: 10%;')}
   z-index: 50;
+  text-shadow: 2px 2px ${colors.white50};
+
+  ${rwd('tablet')} {
+    background-color: ${colors.black25}
+  }
 
   &:hover, &:active{
     background-color: ${colors.white50};
