@@ -55,12 +55,6 @@ export const SecondPage = styled.main<SecondPageType>`
 
 export const SecondRoleContent = styled.div<SecondRoleContentType>`
   background-color: ${(props) => (props.$backgroundcolor)};
-  background-image: url(${({ $img }) => $img});
-  background-repeat: no-repeat; 
-  background-size: auto, cover;
-  background-position: center 5rem;
-  height: 100%;
-  width: 100%;
   position: relative;
   img {
     width: 100%;
@@ -68,6 +62,17 @@ export const SecondRoleContent = styled.div<SecondRoleContentType>`
     transition: transform 0.3s ease;
   }
 `
+export const SecondImage = styled.div<SecondRoleImage>`
+  background-image: url(${({ $img }) => $img});
+  background-repeat: no-repeat; 
+  background-size: auto, cover;
+  background-position: center 5rem;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  pointer-events: none;
+`
+
 export const SecondRoleTitle = styled.p`
   color: ${colors.white};
   font-size: 4rem; 

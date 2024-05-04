@@ -3,7 +3,9 @@ import { useState } from 'react'
 import Switch from '../../components/Switch'
 import { PUBLIC_URL } from '../../constants/EnumType'
 import RoleList from '../../constants/List'
-import { SecondPage, SecondRoleContent, SecondRoleTitle } from '../../styled/pages/Second'
+import {
+  SecondImage, SecondPage, SecondRoleContent, SecondRoleTitle,
+} from '../../styled/pages/Second'
 
 const Second = () => {
   const [clickRole, setClickRole] = useState<number | null>(null)
@@ -21,7 +23,6 @@ const Second = () => {
           key={item.name}
           onClick={() => clickItem(key)}
           $backgroundcolor={item.color}
-          $img={`/${PUBLIC_URL}/images/${item.name}.png`}
           $clickRole={clickRole}
           $key={key}
         >
@@ -33,16 +34,14 @@ const Second = () => {
                 current={clickRole || 0}
                 onChange={clickSwitch}
               />
+              <Switch
+                next
+                current={clickRole || 0}
+                onChange={clickSwitch}
+              />
             </>
           )}
-          {/* <img src={`/${PUBLIC_URL}/images/${item.name}.png`} alt={item.name} /> */}
-          {clickRole === key && (
-            <Switch
-              next
-              current={clickRole || 0}
-              onChange={clickSwitch}
-            />
-          )}
+          <SecondImage $img={`/${PUBLIC_URL}/images/${item.name}.png`} />
         </SecondRoleContent>
       ))}
     </SecondPage>
