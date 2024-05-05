@@ -8,7 +8,7 @@ const rotateAnimation = keyframes`
     left: 10%;
   }
   100% { 
-    font-size: 12rem; 
+    font-size: 25vw; 
     opacity: 1;
     left: 50%;
     transform: translate(-50%, -50%);
