@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import Switch from '../../components/Switch'
 import { PUBLIC_URL } from '../../constants/EnumType'
@@ -6,6 +6,8 @@ import RoleList from '../../constants/List'
 import {
   SecondImage, SecondPage, SecondRoleContent, SecondRoleTitle,
 } from '../../styled/pages/Second'
+import { breakpoints } from '../../styled/util/Mixins'
+import parsePixelValue from '../../util/helper'
 
 const Second = () => {
   const [clickRole, setClickRole] = useState<number | null>(null)
@@ -15,6 +17,20 @@ const Second = () => {
   const clickSwitch = (calcCurrent: number) => {
     if (calcCurrent < RoleList.length && calcCurrent >= 0) setClickRole(calcCurrent)
   }
+
+  const handleRWD = () => {
+    if (window.innerWidth < parsePixelValue(breakpoints.tablet) && clickRole === null) {
+      setClickRole(0)
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener('resize', handleRWD)
+    handleRWD()
+    return (() => {
+      window.removeEventListener('resize', handleRWD)
+    })
+  }, [clickRole])
 
   return (
     <SecondPage $current={clickRole}>
