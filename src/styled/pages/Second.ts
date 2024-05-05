@@ -110,6 +110,9 @@ export const SecondRoleTitle = styled.p`
   animation-name: ${rotateAnimation};
   animation-duration: 0.8s;
   animation-fill-mode: both;
-  position: absolute;
+  position: absolute;  
   top: 20%;
+  ${rwd('tablet')} {
+    top: 15vh;
+  }
 `
