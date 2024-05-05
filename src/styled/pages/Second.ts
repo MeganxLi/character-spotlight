@@ -55,13 +55,13 @@ const generateGridTemplate = (current: number | null) => {
 
 const generateGridTemplateRWD = (current: number | null) => {
   const templateValues = []
+  const changeCurrent = current === null ? 0 : current
 
   for (let i = 0; i < RoleList.length; i++) {
     switch (true) {
-      case i === current:
+      case i === changeCurrent:
         templateValues.push('1fr')
         break
-
       default:
         templateValues.push('0fr')
         break
