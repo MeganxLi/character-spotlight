@@ -12,10 +12,12 @@ type SecondPageType = {
   $current: number | null
 }
 
-type SecondRoleContentType = RoleContentType & {
+type SecondCurrentItemType = {
   $clickRole: number | null
   $key: number
 }
+
+type SecondRoleContentType = RoleContentType & SecondCurrentItemType
 
 type SecondRoleImage = {
   $img: string
