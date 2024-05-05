@@ -6,15 +6,15 @@ import Second from '../pages/Second'
 
 const router = createBrowserRouter([
   {
-    path: '',
+    path: '/',
     element: <First />,
   },
   {
-    path: 'first',
+    path: '/first',
     element: <First />,
   },
   {
-    path: 'second',
+    path: '/second',
     element: <Second />,
   },
 ], {
