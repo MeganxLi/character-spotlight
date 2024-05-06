@@ -104,15 +104,17 @@ export const SecondImage = styled.div<SecondRoleImage>`
 
 export const SecondRoleTitle = styled.p`
   color: ${colors.white};
-  font-size: 4rem; 
+  font-size: 10rem; 
   text-transform: Uppercase;
   font-weight: 500;
+  left: 50%;
+  transform: translate(-50%, -50%);
   animation-name: ${rotateAnimation};
   animation-duration: 0.8s;
   animation-fill-mode: both;
   position: absolute;  
   top: 20%;
   ${rwd('tablet')} {
-    top: 15vh;
+    top: 10%;
   }
 `

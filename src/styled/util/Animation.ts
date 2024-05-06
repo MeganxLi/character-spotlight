@@ -3,7 +3,7 @@ import { keyframes } from 'styled-components'
 const rotateAnimation = keyframes`
   0% { 
     transform: rotate(270deg) translate(-50%, -50%); 
-    font-size: 4rem; 
+    font-size: 4vw; 
     opacity: 0.5;
     left: 10%;
   }
