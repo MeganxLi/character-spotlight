@@ -1,13 +1,14 @@
 import { useEffect, useState } from 'react'
 
 import Switch from '../../components/Switch'
-import { PUBLIC_URL } from '../../constants/EnumType'
 import RoleList from '../../constants/List'
 import {
   SecondImage, SecondPage, SecondRoleContent, SecondRoleTitle,
 } from '../../styled/pages/Second'
 import { breakpoints } from '../../styled/util/Mixins'
 import parsePixelValue from '../../util/helper'
+
+const baseUrl = import.meta.env.BASE_URL
 
 const Second = () => {
   const [clickRole, setClickRole] = useState<number | null>(null)
@@ -57,7 +58,7 @@ const Second = () => {
               />
             </>
           )}
-          <SecondImage $img={`/${PUBLIC_URL}/images/${item.name}.png`} />
+          <SecondImage $img={`${baseUrl}images/${item.name}.png`} />
         </SecondRoleContent>
       ))}
     </SecondPage>

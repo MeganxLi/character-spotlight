@@ -1,6 +1,6 @@
 import { ChevronLeft, ChevronRight } from 'react-feather'
 
-import { ICON_SIZE } from '../constants/EnumType'
+import ICON_SIZE from '../constants/EnumType'
 import { SwitchStyled } from '../styled/pages/Second'
 
 interface SwitchProps {

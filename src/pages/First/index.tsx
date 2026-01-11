@@ -1,9 +1,10 @@
 import Arrow from '../../components/Arrow'
-import { PUBLIC_URL } from '../../constants/EnumType'
 import RoleList from '../../constants/List'
 import {
   FirstPage, RoleContent, RoleContentName, RoleContentRole, RoleContentTitle,
 } from '../../styled/pages/First'
+
+const baseUrl = import.meta.env.BASE_URL
 
 const First = () => (
   <FirstPage>
@@ -16,7 +17,7 @@ const First = () => (
           <RoleContentName>{item.name}</RoleContentName>
           <RoleContentRole>{item.role}</RoleContentRole>
         </RoleContentTitle>
-        <img src={`/${PUBLIC_URL}/images/${item.name}.png`} alt={item.name} />
+        <img src={`${baseUrl}images/${item.name}.png`} alt={item.name} />
         <Arrow />
       </RoleContent>
     ))}

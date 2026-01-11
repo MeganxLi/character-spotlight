@@ -1,8 +1,13 @@
 import { createBrowserRouter } from 'react-router-dom'
 
-import { PUBLIC_URL } from '../constants/EnumType'
 import First from '../pages/First'
 import Second from '../pages/Second'
+
+const basename = (() => {
+  const baseUrl = import.meta.env.BASE_URL
+  const normalized = baseUrl.replace(/\/$/, '')
+  return normalized === '' ? '/' : normalized
+})()
 
 const router = createBrowserRouter([
   {
@@ -18,7 +23,7 @@ const router = createBrowserRouter([
     element: <Second />,
   },
 ], {
-  basename: `/${PUBLIC_URL}`,
+  basename,
 })
 
 export default router
