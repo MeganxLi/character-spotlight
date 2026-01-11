@@ -32,7 +32,9 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Build
-        run: npm run build
+        run: npm run build:pages
+        env:
+          REPO_NAME: ${{ github.event.repository.name }}
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
@@ -43,3 +45,5 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+      - name: Show deployed URL
+        run: echo "Deployed to ${{ steps.deployment.outputs.page_url }}"
